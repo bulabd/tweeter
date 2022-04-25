@@ -31,3 +31,7 @@ body {
  nav {
    font-family: 'Bungee', sans-serif;
  }
+
+ main {
+   padding: 0 5%;
+ }
