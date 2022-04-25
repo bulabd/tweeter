@@ -1,0 +1,36 @@
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  border-bottom: 3px #545149 solid;
+  padding-bottom: 7px;
+}
+
+#tweet-text {
+  display: inline-block;
+  margin-left: 20px;
+  border: none;
+  outline: none;
+  background-color: #f4f1ec;
+  overflow: auto;
+  resize: none;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  font-family: 'Bungee', sans-serif;
+}
+
+form div button {
+  color: #f4f1ec;
+  background-color: #4056A1;
+  border: 2px #4056A1 solid;
+}
