@@ -1,4 +1,4 @@
-header {
+.header {
   color: #f4f1ec;
   background-color: #d1b742;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
@@ -10,6 +10,6 @@ header {
   padding-top: 40px;
 }
 
-header h1 strong {
-  font-weight: 500;
+header h2 strong {
+  font-weight: 300;
 }
