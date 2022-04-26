@@ -34,4 +34,55 @@ body {
 
  main {
    padding: 0 5%;
+   display: flex;
+   flex-direction: column;
+ }
+
+ .tweet {
+   margin: 1.5em 0;
+   padding: 0 7px 7px 7px;
+   border: 3px #545149 solid;
+ }
+
+ .tweet:hover {
+  box-shadow: 5px 5px rgba(64, 86, 161, 0.3);
+ }
+
+ article header {
+   display: flex;
+   justify-content: space-between;
+   font-size: 22px;
+   padding: 0 20px 25px 20px;
+ }
+
+ .person-name {
+   font-weight: 300;
+ }
+
+ .person-nickname {
+   color: rgba(64, 86, 161, 0.3);
+ }
+
+ .tweet-sentence {
+   border-bottom: 3px #545149 solid;
+   padding: 0 10px 30px 20px;
+   font-weight: 600;
+ }
+
+ article footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 15px;
+   padding: 0 20px;
+   font-weight: 600;
+ }
+
+ article footer div i {
+   color: #4056A1;
+   margin: 0 2px;
+ }
+
+ article footer div i:hover {
+   color: #d1b742;
  }
