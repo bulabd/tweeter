@@ -7,9 +7,9 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 500px;
   border-bottom: 3px #545149 solid;
   padding-bottom: 7px;
+  font-weight: 600;
 }
 
 #tweet-text {
