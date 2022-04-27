@@ -7,11 +7,21 @@ $(document).ready(function() {
     event.preventDefault();
     const formData = $(this).serialize();
     if (formData.length <= 5) {
-      alert('Tweet cannot be empty');
+      $('#error1').slideDown("slow", function() {
+        $('#error1').css('display', 'flex');
+      });
     } else if (formData.length > 145) {
-      alert('Tweet length cannot exceed 140 characters');
+      $('#error2').slideDown("slow", function() {
+        $('#error2').css('display', 'flex');
+      });
     } else {
       $.post('/tweets', formData, function() {
+        $('#error1').slideUp("slow", function() {
+          $('#error1').css('display', 'none');
+        });
+        $('#error2').slideUp("slow", function() {
+          $('#error2').css('display', 'none');
+        });
         $('#tweet-text').val('');
         $('#tweets-container').empty();
         loadTweets();
