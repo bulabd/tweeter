@@ -1,5 +1,17 @@
 // render tweets when document is loaded
 $(document).ready(function() {
+  $('form').submit(function(event) {
+    event.preventDefault();
+    const formData = $(this).serialize();
+    $.ajax({
+      action: '/tweets',
+      method: 'POST',
+      data: formData
+    })
+      // .then((res) => data.push(res));
+  });
+
+
   renderTweets(data);
 });
 
