@@ -1,8 +1,4 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+// render tweets when document is loaded
 $(document).ready(function() {
   renderTweets(data);
 });
@@ -30,35 +26,37 @@ const data = [
       },
       "created_at": 1461113959088
     }
-  ];
-  
+];
+
+// loop through tweets array and append each of them
 const renderTweets = function(tweets) {
   for (let tweet of tweets) {
     $('#tweets-container').append(createTweetElement(tweet));
   }
 };
-  
+
+// create a tweet
 const createTweetElement = function(tweet) {
-  let $tweet = $(
-    `<article class="tweet">
-    <header>
-    <div>
-    <img src="${tweet.user.avatars}"></img>
-    <h3 class="person-name">${tweet.user.name}</h3>
-    </div>
-    <h3 class="person-nickname">${tweet.user.handle}</h3>
-    </header>
-    <div class="tweet-sentence">
-    <label>${tweet.content.text}</label>
-    </div>
-    <footer>
-    <p>${tweet.created_at}</p>
-    <div>
-    <i class="fa-solid fa-flag"></i>
-    <i class="fa-solid fa-retweet"></i>
-    <i class="fa-solid fa-heart"></i>
-    </div>
-    </footer>
+  let $tweet = $(`
+    <article class="tweet">
+      <header>
+        <div>
+          <img src="${tweet.user.avatars}"></img>
+          <h3 class="person-name">${tweet.user.name}</h3>
+        </div>
+        <h3 class="person-nickname">${tweet.user.handle}</h3>
+      </header>
+      <div class="tweet-sentence">
+        <label>${tweet.content.text}</label>
+      </div>
+      <footer>
+        <p>${tweet.created_at}</p>
+        <div>
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+      </footer>
     </article>`
   );
   return $tweet;
