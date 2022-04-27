@@ -3,12 +3,16 @@ $(document).ready(function() {
   $('form').submit(function(event) {
     event.preventDefault();
     const formData = $(this).serialize();
-    $.ajax({
-      action: '/tweets',
-      method: 'POST',
-      data: formData
-    })
-      // .then((res) => data.push(res));
+    if (formData.length <= 5) {
+      alert('Tweet cannot be empty');
+    } else if (formData.length > 145) {
+      alert('Tweet length cannot exceed 140 characters');
+    } else {
+      $.ajax('/tweets', {
+        method: 'POST',
+        data: formData
+      });
+    }
   });
 
   // function to render tweets using an ajax get request
