@@ -33,8 +33,16 @@ const renderTweets = function(tweets) {
   }
 };
 
+// escape function to prevent XSS
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 // create a tweet
 const createTweetElement = function(tweet) {
+  const safeHTML = `<label>${escape(tweet.content.text)}</label>`;
   let $tweet = $(`
     <article class="tweet">
       <header>
@@ -45,7 +53,7 @@ const createTweetElement = function(tweet) {
         <h3 class="person-nickname">${tweet.user.handle}</h3>
       </header>
       <div class="tweet-sentence">
-        <label>${tweet.content.text}</label>
+        ${safeHTML}
       </div>
       <footer>
         <p>${timeago.format(tweet.created_at)}</p>
@@ -58,4 +66,4 @@ const createTweetElement = function(tweet) {
     </article>`
   );
   return $tweet;
-}; 
+};
