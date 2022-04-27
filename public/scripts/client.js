@@ -16,6 +16,7 @@ $(document).ready(function() {
       });
     } else {
       $.post('/tweets', formData, function() {
+        $('output').text('140');
         $('#error1').slideUp("slow", function() {
           $('#error1').css('display', 'none');
         });
