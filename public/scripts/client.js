@@ -1,5 +1,8 @@
 // render tweets when document is loaded
 $(document).ready(function() {
+  
+  loadTweets();
+  
   $('form').submit(function(event) {
     event.preventDefault();
     const formData = $(this).serialize();
@@ -8,26 +11,25 @@ $(document).ready(function() {
     } else if (formData.length > 145) {
       alert('Tweet length cannot exceed 140 characters');
     } else {
-      $.ajax('/tweets', {
-        method: 'POST',
-        data: formData
+      $.post('/tweets', formData, function() {
+        $('#tweet-text').val('');
+        $('#tweets-container').empty();
+        loadTweets();
       });
     }
   });
-
-  // function to render tweets using an ajax get request
-  const loadTweets = function() {
-    $.ajax('/tweets', {method: 'GET'})
-      .then((res) => renderTweets(res));
-  };
-
-  loadTweets();
 });
+
+// function to render tweets using an ajax get request
+const loadTweets = function() {
+  $.ajax('/tweets', {method: 'GET'})
+  .then((res) => renderTweets(res));
+};
 
 // loop through tweets array and append each of them
 const renderTweets = function(tweets) {
   for (let tweet of tweets) {
-    $('#tweets-container').append(createTweetElement(tweet));
+    $('#tweets-container').prepend(createTweetElement(tweet));
   }
 };
 
