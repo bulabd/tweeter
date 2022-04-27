@@ -55,8 +55,20 @@ body {
    padding: 0 20px 25px 20px;
  }
 
+ article header div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ article header div img {
+   height: 50px;
+   width: 50px;
+ }
+
  .person-name {
    font-weight: 300;
+   margin-left: 20px;
  }
 
  .person-nickname {
