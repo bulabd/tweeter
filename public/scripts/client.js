@@ -41,7 +41,7 @@ const createTweetElement = function(tweet) {
     <article class="tweet">
       <header>
         <div>
-          <img src="${tweet.user.avatars}"></img>
+          <img src="${tweet.user.avatars}" alt="An avatar"></img>
           <h3 class="person-name">${tweet.user.name}</h3>
         </div>
         <h3 class="person-nickname">${tweet.user.handle}</h3>
