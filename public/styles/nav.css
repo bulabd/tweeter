@@ -30,3 +30,10 @@ nav {
 .newTweetLink {
   margin: 0;
 }
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+  }
+}
