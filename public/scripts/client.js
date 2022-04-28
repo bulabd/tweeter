@@ -2,6 +2,17 @@
 $(document).ready(function() {
   
   loadTweets();
+
+  $('#top-right-link').click(function(event) {
+    event.preventDefault();
+    $('#top-right-link').slideUp("slow", function() {
+      $('#top-right-link').css('display', 'none');
+    });
+    $('#new-tweet').slideDown("slow", function() {
+      $('#new-tweet').css('display', 'inline');
+      $('textarea').focus();
+    });
+  });
   
   $('form').submit(function(event) {
     event.preventDefault();
