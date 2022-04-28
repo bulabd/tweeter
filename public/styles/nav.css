@@ -25,6 +25,28 @@ nav {
 
 .icon {
   color: #EB1F1F;
+  cursor: pointer;
+}
+
+#arrow {
+  position: relative;
+  animation-name: drop;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes drop {
+  0% {
+    top: 0px;
+  }
+
+  50% {
+    top: 0.5em;
+  }
+
+  100% {
+    top: 0px;
+  }
 }
 
 .newTweetLink {
