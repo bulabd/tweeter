@@ -3,6 +3,7 @@ $(document).ready(function() {
   
   loadTweets();
 
+  // logic to make top-right-link disappear and new-tweet form appear when clicked
   $('#top-right-link').click(function(event) {
     event.preventDefault();
     $('#top-right-link').slideUp("slow", function() {
@@ -14,9 +15,11 @@ $(document).ready(function() {
     });
   });
   
+  // logic to create new tweet
   $('form').submit(function(event) {
     event.preventDefault();
     const formData = $(this).serialize();
+    // display errors if content conditions are not met
     if (formData.length <= 5) {
       $('#error1').slideDown("fast", function() {
         $('#error1').css('display', 'flex');
@@ -26,6 +29,7 @@ $(document).ready(function() {
         $('#error2').css('display', 'flex');
       });
     } else {
+      // post tweet if all conditions are met
       $.post('/tweets', formData, function() {
         $('output').text('140');
         $('#error1').slideUp("fast", function() {

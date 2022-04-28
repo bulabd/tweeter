@@ -100,6 +100,7 @@ article footer div i:hover {
   color: #d1b742;
 }
 
+/* media query for desktop */
 @media only screen and (min-width: 1024px) {
   body {
     display: flex;
