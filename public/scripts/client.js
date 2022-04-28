@@ -7,20 +7,20 @@ $(document).ready(function() {
     event.preventDefault();
     const formData = $(this).serialize();
     if (formData.length <= 5) {
-      $('#error1').slideDown("slow", function() {
+      $('#error1').slideDown("fast", function() {
         $('#error1').css('display', 'flex');
       });
     } else if (formData.length > 145) {
-      $('#error2').slideDown("slow", function() {
+      $('#error2').slideDown("fast", function() {
         $('#error2').css('display', 'flex');
       });
     } else {
       $.post('/tweets', formData, function() {
         $('output').text('140');
-        $('#error1').slideUp("slow", function() {
+        $('#error1').slideUp("fast", function() {
           $('#error1').css('display', 'none');
         });
-        $('#error2').slideUp("slow", function() {
+        $('#error2').slideUp("fast", function() {
           $('#error2').css('display', 'none');
         });
         $('#tweet-text').val('');
