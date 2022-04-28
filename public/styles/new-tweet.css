@@ -60,3 +60,7 @@ form div button {
   background-color: #4056A1;
   border: 2px #4056A1 solid;
 }
+
+form div button:hover {
+  box-shadow: 3px 3px rgba(64, 86, 161, 0.3);
+}
