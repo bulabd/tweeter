@@ -59,6 +59,7 @@ form div button {
   color: #f4f1ec;
   background-color: #4056A1;
   border: 2px #4056A1 solid;
+  cursor: pointer;
 }
 
 form div button:hover {
