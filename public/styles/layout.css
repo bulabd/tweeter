@@ -79,6 +79,7 @@ article header div img {
   border-bottom: 3px #545149 solid;
   padding: 0 10px 30px 20px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 article footer {
@@ -101,7 +102,7 @@ article footer div i:hover {
 }
 
 /* media query for desktop */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1200px) {
   body {
     display: flex;
     justify-content: center;
@@ -111,5 +112,9 @@ article footer div i:hover {
   .header {
     width: 30%;
     margin-left: 5%;
+  }
+
+  #tweets-container {
+    width: 800px;
   }
 }
